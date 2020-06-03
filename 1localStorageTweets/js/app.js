@@ -6,6 +6,7 @@ const formulario=document.getElementById("formulario");
 eventListeners();
 function eventListeners(){
     formulario.addEventListener("submit",agregarTweet);
+    listaTweets.addEventListener("click",borrarTweet);
     
 }
 
@@ -23,4 +24,14 @@ function agregarTweet(e){
     li.appendChild(botonBrorrar); 
     listaTweets.appendChild(li);
     
+}
+function borrarTweet(e){
+e.preventDefault();
+
+if(e.target.className==="borrar-tweet"){
+   console.log(e.target.parentElement.remove());
+   alert("Tweet eliminado")
+}else{
+    //console.log("No diste click en la x")
+}
 }
