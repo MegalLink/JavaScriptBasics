@@ -49,6 +49,9 @@ function insertarCarrito(curso){
  </td>
  `;
     listaCursos.appendChild(row);
+
+    //GUARDAR EN LOCAL STORAGE
+    guardarCursoLocalStorage(curso);
 }
 //Elimina el curso del carrito en el DOM
 function eliminarCurso(e){
@@ -68,4 +71,22 @@ function vaciarCarrito(e){
     while(listaCursos.firstChild){
         listaCursos.removeChild(listaCursos.firstChild);
     }
+}
+
+
+function  guardarCursoLocalStorage(curso){
+let cursos;
+cursos=obtenerCursosLocalStorage();
+cursos.push(curso);
+localStorage.setItem('cursos',JSON.stringify(cursos));
+}
+function obtenerCursosLocalStorage(){
+let cursosLS;
+//si hay algo en LS
+if(localStorage.getItem('cursos')==null){
+    cursosLS=[];
+}else{
+    cursosLS=JSON.parse(localStorage.getItem('cursos'));
+}
+return cursosLS
 }
