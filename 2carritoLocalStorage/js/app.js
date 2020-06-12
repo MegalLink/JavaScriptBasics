@@ -59,11 +59,14 @@ function insertarCarrito(curso){
 function eliminarCurso(e){
     e.preventDefault();
    
-    let curso;
+    let curso,cursoId;
     if(e.target.classList.contains('borrar-curso')){
         //traversing
         e.target.parentElement.parentElement.remove();
+        curso=e.target.parentElement.parentElement;
+        cursoId=curso.querySelector('a').getAttribute('data-id');
     }
+    eliminarCursoLocalStorage(cursoId)
 }
 function vaciarCarrito(e){
     e.preventDefault();
@@ -73,6 +76,7 @@ function vaciarCarrito(e){
     while(listaCursos.firstChild){
         listaCursos.removeChild(listaCursos.firstChild);
     }
+    localStorage.clear();
 }
 
 
@@ -114,4 +118,16 @@ function leerLocalStorage(){
  `;
     listaCursos.appendChild(row);
     })
+}
+
+
+function eliminarCursoLocalStorage(cursoId){
+    let cursosLS;
+    cursosLS=obtenerCursosLocalStorage();
+    cursosLS.forEach((curso,index)=>{
+        if(curso.id===cursoId){
+            cursosLS.splice(index,1);
+        }
+    })
+    localStorage.setItem('cursos',JSON.stringify(cursosLS))
 }
