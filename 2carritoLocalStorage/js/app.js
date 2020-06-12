@@ -12,6 +12,8 @@ cursos.addEventListener('click',comprarCurso)
 carrito.addEventListener('click',eliminarCurso)
 //Vaciar carrito
 vaciarCarritoBtn.addEventListener('click',vaciarCarrito)
+//AL CARGAR DOCUMENTO MOSTRAR LOCAL STORAGE
+document.addEventListener('DOMContentLoaded',leerLocalStorage)
 }
 
 
@@ -89,4 +91,27 @@ if(localStorage.getItem('cursos')==null){
     cursosLS=JSON.parse(localStorage.getItem('cursos'));
 }
 return cursosLS
+}
+
+function leerLocalStorage(){
+    let cursosLS;
+    cursosLS=obtenerCursosLocalStorage();
+    cursosLS.forEach((curso)=>{
+        const row=document.createElement('tr');
+ row.innerHTML=`
+ <td>
+    <img src="${curso.imagen}" width="100px">
+ </td>
+ <td>
+ ${curso.titulo}
+ </td>
+ <td>
+ ${curso.precio}
+ </td>
+ <td>
+   <a href="#" class="borrar-curso" data-id= "${curso.id}">X</a>
+ </td>
+ `;
+    listaCursos.appendChild(row);
+    })
 }
