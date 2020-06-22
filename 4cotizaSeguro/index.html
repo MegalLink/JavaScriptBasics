@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="./css/custom.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+
+  
+  </head>
+  <body>
+<div class="container justify-content-center">
+  <div class="row mt-5 ">
+    <div class="col-md-6 mx-auto ">
+      <div class="card">
+        <div class="card-header  text-center bg-primary text-light">
+          COTIZA TU SEGURO DE AUTO
+        </div>
+        <div class="card-body">
+          <label for="marca">Marca</label>
+          <select id="marca"class="form-select mb-3" aria-label="Marca">
+            <option selected>Seleccionar</option>
+            <option value="americano">Americano</option>
+            <option value="asiatico">Asiatico</option>
+            <option value="europeo">Europeo</option>
+          </select>
+          <label for="año">Año</label>
+          <select id="anio" class="form-select mb-3" aria-label="Año">
+            
+            <option value="2020">2020</option>
+            <option value="2019">2019</option>
+            <option value="2018">2018</option>
+            <option value="2017">2017</option>
+            <option value="2014">2014</option>
+            <option value="2015">2015</option>
+            
+          </select>
+          <label for="seguro">Tipo seguro</label>
+          <div id="tipo">
+            <div class="form-check mt-2">
+              <input class="form-check-input" type="radio" name="radioButton" id="radioButton1" checked value="basico">
+              <label class="form-check-label" for="radioButton1">
+                Básico
+              </label>
+            </div>
+            <div class="form-check mt-2">
+              <input class="form-check-input" type="radio" name="radioButton" id="radioButton2" value="completo">
+              <label class="form-check-label" for="radioButton2">
+                Completo
+              </label>
+  
+            </div>
+          </div>
+          
+          <div id="spinner"  class="row justify-content-center">
+            <div class="col-3">
+              <img  src="./img/spinner.gif" class="img-fluid" alt="loading sign">
+            </div>
+          </div>
+            <div id="cotizacion"></div>
+
+          <button id="cotizar" class=" mt-5 btn btn-primary btn-block">
+            Cotizar
+          </button>
+        </div>
+       
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+    <script src="./js/app.js"></script>
+  </body>
+</html>

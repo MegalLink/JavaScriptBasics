@@ -94,6 +94,6 @@ function resetFormulario(){
     email.value="";
     asunto.value="";
     mensaje.value="";
-    btnEnviar.display="none";
+    btnEnviar.disabled="true";
     
 }
